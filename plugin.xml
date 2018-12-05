@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.comscore.cordova"
+    version="1.1.5">
+    <name>comScore</name>
+    <description>comScore Cordova plugin</description>
+    <license>Copyright (c) 2015 comScore, Inc.</license>
+    <keywords>cordova,comScore</keywords>
+
+    <!-- Important to let measurement leave -->
+    <dependency id="cordova-plugin-whitelist"/>
+
+    <js-module src="www/comscore.cordova.js" name="ComScore">
+        <clobbers target="ns_" />
+    </js-module>
+
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ComScore" >
+                <param name="android-package" value="com.comscore.cordova.ComScore"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        </config-file>
+
+        <source-file src="libs/android/comScore.cordova.android.jar" target-dir="libs" framework="true" />
+    </platform>
+    
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ComScore">
+                <param name="ios-package" value="SCORComScore"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/SCORComScore.m" />
+        <header-file src="src/ios/SCORComScore.h" />
+        <header-file src="src/ios/SCORHelper.h" />
+
+        <source-file src="libs/ios/comscore-cordova.a" target-dir="libs" framework="true" />
+
+    </platform>
+
+    <!-- windows -->
+    <platform name="windows">
+        <framework src="libs/win81rt/anycpu/ComScore.cordova.winmd" custom="true" versions="8.1" target-dir="lib/win81rt/" />
+        <framework src="libs/win10/anycpu/ComScore.cordova.winmd" custom="true" versions="10" target-dir="lib/win10" />
+    </platform>
+</plugin>

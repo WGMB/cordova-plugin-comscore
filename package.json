@@ -1,0 +1,23 @@
+{
+  "name": "com.comscore.cordova",
+  "version": "1.1.4",
+  "description": "comScore Cordova plugin",
+  "cordova": {
+    "id": "com.comscore.cordova",
+    "platforms": [
+      "android",
+      "ios",
+      "windows"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "comScore",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows"
+  ],
+  "author": "comScore",
+  "license": "Copyright (c) 2017 comScore, Inc."
+}
