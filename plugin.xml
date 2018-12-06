@@ -30,7 +30,7 @@
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
         </config-file>
 
-        <source-file src="libs/android/comScore.cordova.android.jar" target-dir="libs" framework="true" />
+        <source-file src="libs/android/classes.jar" target-dir="libs" framework="true" />
     </platform>
     
     <!-- ios -->
